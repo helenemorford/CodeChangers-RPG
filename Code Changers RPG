@@ -3,4 +3,7 @@
   <head>
   <title>CodeChangers 2017 Text RPG</title>
   </head>
+  <body>
+    <script src="scripts.js" type="text/javascript"></script>
+  </body>
 </html>
