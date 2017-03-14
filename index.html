@@ -2,53 +2,30 @@
 <html>
   <head>
     <title>CodeChangers 2017 Text RPG</title>
-    <style type="text/css">
-		.centered {
-		  position: fixed;
-		  top: 50%;
-		  left: 50%;
-		  margin-top: -225px;
-		  margin-left: -200px;
-		}
-		.centered2 {
-		  position: fixed;
-		  top: 50%;
-		  left: 50%;
-		  margin-top: -112px;
-		  margin-left: -100px;
-		}
-        .centered3 {
-		  position: fixed;
-		  top: 50%;
-		  left: 50%;
-		  margin-left: -100px;
-		}
-        .centered4 {
-		  position: fixed;
-		  top: 50%;
-		  left: 50%;
-          margin-top: -225px;
-		  margin-left: -100px;
-		}
-     </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
-  <body background="http://www.drodd.com/images14/blue17.jpg">
-      <div class="centered" style="width:400px; height:450px; background-color:white;">
-          <div class="centered4" style="width:200px; height:225px; text-align:center;">
-              <h1>New Game</h1>
+  <body id="bg" background="http://www.drodd.com/images14/blue17.jpg">
+      <div id="box" style="width:400px; height:450px; background-color:white;">
+          <div id="storyBox">
+              <p id="story"></p>
           </div>
-          <div class="centered2" style="width:200px; height:225px; text-align:center;">
-            <input id="stuf" type="text" placeholder="Name"><br>
-            <input id="stuf" type="text" placeholder="Gender"><br>
-            <select id="stuf" name="difficulty" id="difficulty"><br>
+          <div id="text" style="width:200px; height:225px; text-align:center;">
+              <h1 id="title">New Game</h1>
+              <p id="game"></p>
+          </div>
+          <div style="width:370px; height:25px; position:fixed; top;50%; left:50%; margin-top:420px; margin-left:-188px; text-align:center;" id="inpBox"></div>
+          <div id="setup" style="width:200px; height:225px; text-align:center;">
+            <input id="name" type="text" placeholder="Name"><br>
+            <input id="gender" type="text" placeholder="Gender"><br>
+            <select id="difficulty" name="difficulty" id="difficulty"><br>
                 <option value="1">Easy</option>
                 <option value="2">Normal</option>
                 <option value="3">Challenging</option>
                 <option value="4">Hard</option>
             </select>
           </div>
-          <div class="centered3" style="width:200px; height:225px; text-align:center;">
-              <button onclick="startGame()">Start</button>
+          <div id="button" style="width:200px; height:225px; text-align:center;">
+              <button id="start" onclick="startGame()">Start</button>
           </div>
       </div>
       <script src="script.js"></script>
