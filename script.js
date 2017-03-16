@@ -6,7 +6,7 @@ var pronouns = ["kid", "they"];
 
 */
 var storyList = [
-    [["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working in turn to keep everything in balance.", 'desc'], 1, '', 13, 0, false, 1],
+    [["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working in turn to keep everything in balance.", 'desc'], 1, '', 1, 0, false, 1],
     [["As things had been long before, the Humans and Mimiga had worked together in a constant struggle for the upper hand, in a strange but stable relationship.", 'desc'], 1, '', 2, 0, false, 1],
     [["The Humans were consumers, with a destructive will but with the ability to wield what they consume. The Mimiga were producers, with the ability to wield what they created. Together, like the two sides of a coin, they lived in incongruity, but side by side they kept the world both alive and progressing forward, even if it was in a dissonant way.", 'desc'], 1, '', 3, 0, true, 1],
     [["One day, something unthinkable had happened. A Mimiga scientist had discovered a way to change creatures in such a way as to make them conscious, to make them what we call today 'more human.' These creatures were labeled 'Monsters,' and were seen as enemies by Mimiga and Humans alike.", 'desc'], 1, '', 4, 0, false, 1],
