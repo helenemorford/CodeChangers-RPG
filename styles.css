@@ -25,14 +25,19 @@
     margin-top: -225px;
     margin-left: -100px;
 }
+
+/* Character Color Classes */
 .desc {
-    color:lightgrey;
+    color:lightgray;
 }
 .talk {
-    color:white;
+    color:#ffff80;
 }
 .pholka {
     color:#ff80df;
+}
+.tuns {
+    color:#88ff1a;
 }
 .king {
     color:#ccffff;
@@ -44,5 +49,8 @@
     color:#ff2700;
 }
 .guard {
-    color:grey;
+    color:gray;
+}
+.doctor {
+    color:#ff471a;
 }
