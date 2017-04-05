@@ -347,7 +347,8 @@ function interpretInput(sceneNum) {
     if ((input != '' && parseInt(input) != NaN) || input == '') {
         if (options == '') {
             if (battleId != 0) {
-                //startBattle(battleId);
+                newSceneNum = results;
+                startBattle(battleId);
             } else {
                 newSceneNum = results;
             }
