@@ -50,9 +50,7 @@ var musicList = [
 
 */
 var battleList = [
-    "pholka",
-    "homework",
-    "king"
+    ["pholka.png","pholka-hurt.gif"]
 ];
 
 var bgList = [
