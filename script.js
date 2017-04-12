@@ -119,7 +119,7 @@ function setup() {
     difficulty = child2c.value;
 
     if (name == '') {
-        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy") {
+        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender == "Man") {
             name = nameList[0][Math.floor((Math.random() * nameList.length))];
         } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
             name = nameList[1][Math.floor((Math.random() * nameList.length))];
@@ -129,7 +129,7 @@ function setup() {
         //console.log("Name chosen is " + name);
     }
     
-    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy") {
+    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
         pronouns = ["boy", "he"];
     } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
         pronouns = ["girl", "she"];
