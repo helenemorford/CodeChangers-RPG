@@ -131,7 +131,7 @@ function setup() {
     
     if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
         pronouns = ["boy", "he"];
-    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
+    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl" || gender == "woman" || gender == "Woman" || gender == "gurl" || gender == "Gurl") {
         pronouns = ["girl", "she"];
     } else {
         pronouns = ["kid", "they"];
