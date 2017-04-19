@@ -1,10 +1,78 @@
 //This is where the script goes!
 var pronouns = ["kid", "they"];
+
+function startGame() {
+    //stopAudio();
+    setup();
+    var storyBox = document.getElementById("storyBox");
+    var storyTxt = document.getElementById("story");
+    var background = document.getElementById("bg");
+    var inp = document.createElement("input");
+    //inp.onkeydown="document.addEventListener('keyup', function(e) {if (e.which == 13) interpretInput(currentScene)});"
+    inp.placeholder = ">input";
+    inp.style = "width:370px;";
+    inp.id = "input";
+    var inpBox = document.getElementById("inpBox");
+    inpBox.appendChild(inp);
+    inp.focus();
+    
+    storyBox.style = "background-color:black; width:375px; height:400px; position: fixed; top: 50%; left: 50%; margin-top:-212px; margin-left:-188px;";
+    background.style = "background-color:black;";
+    //background.background = "backstory.gif";
+    storyTxt.style = "padding-left:25px; padding-right:25px;"
+    
+    currentScene = 0;
+    playScene(currentScene);
+    //playMusic(1);
+    //printText(["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working in turn to keep everything in balance. <<PRESS ENTER CONTINUE>>", 'desc'], false);
+    //printText("Select the input box, then press Enter to continue.", 'desc');
+}
+
+function setup() {
+    var nameList = [["Zac", "Kaden", "Alex"], ["Helene", "Cyndi", "Alex"]]
+
+    var parent1 = document.getElementById("text");
+    var child1 = document.getElementById("title");
+    var parent2 = document.getElementById("setup");
+    var child2a = document.getElementById("name");
+    var child2b = document.getElementById("gender");
+    var child2c = document.getElementById("difficulty");
+    var parent3 = document.getElementById("button");
+    var child3 = document.getElementById("start");
+    name = child2a.value;
+    gender = child2b.value;
+    difficulty = child2c.value;
+
+    if (name == '') {
+        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender == "Man") {
+            name = nameList[0][Math.floor((Math.random() * nameList.length))];
+        } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
+            name = nameList[1][Math.floor((Math.random() * nameList.length))];
+        } else {
+            name = nameList[(Math.floor((Math.random() * 2)+1)-1)][Math.floor((Math.random() * nameList[0].length))];
+        }
+        //console.log("Name chosen is " + name);
+    }
+    
+    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
+        pronouns = ["boy", "he"];
+    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl" || gender == "woman" || gender == "Woman" || gender == "gurl" || gender == "Gurl") {
+        pronouns = ["girl", "she"];
+    } else {
+        pronouns = ["kid", "they"];
+    }
+    
+    parent1.removeChild(child1);    
+    parent2.removeChild(child2a);
+    parent2.removeChild(child2b);
+    parent2.removeChild(child2c);
+    parent3.removeChild(child3);
+}
+
 /*  storyList key:
-
 [0[text, char], 1musicId, 2[option1, option2], 3[result1, result2], 4battleId, 5continue, 6backgroundId, 7statUps[atk, maxHp, def, hp]]
-
 */
+
 var storyList = [
     [["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working, in turn, to keep everything in balance.", 'desc'], 1, '', 1, 0, false, 1, 0],
     [["As things had been long before, the Humans and Mimiga worked together in a constant struggle for the upper hand, in a strange but stable relationship.", 'desc'], 1, '', 2, 0, false, 1, 0],
@@ -76,73 +144,8 @@ var exp = 0;
 var junk;
 var oldJunk;
 
-function startGame() {
-    //stopAudio();
-    setup();
-    var storyBox = document.getElementById("storyBox");
-    var storyTxt = document.getElementById("story");
-    var background = document.getElementById("bg");
-    var inp = document.createElement("input");
-    //inp.onkeydown="document.addEventListener('keyup', function(e) {if (e.which == 13) interpretInput(currentScene)});"
-    inp.placeholder = ">input";
-    inp.style = "width:370px;";
-    inp.id = "input";
-    var inpBox = document.getElementById("inpBox");
-    inpBox.appendChild(inp);
-    inp.focus();
-    
-    storyBox.style = "background-color:black; width:375px; height:400px; position: fixed; top: 50%; left: 50%; margin-top:-212px; margin-left:-188px;";
-    background.style = "background-color:black;";
-    //background.background = "backstory.gif";
-    storyTxt.style = "padding-left:25px; padding-right:25px;"
-    
-    currentScene = 0;
-    playScene(currentScene);
-    //playMusic(1);
-    //printText(["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working in turn to keep everything in balance. <<PRESS ENTER CONTINUE>>", 'desc'], false);
-    //printText("Select the input box, then press Enter to continue.", 'desc');
-}
 
-function setup() {
-    var nameList = [["Zac", "Kaden", "Alex"], ["Helene", "Cyndi", "Alex"]]
 
-    var parent1 = document.getElementById("text");
-    var child1 = document.getElementById("title");
-    var parent2 = document.getElementById("setup");
-    var child2a = document.getElementById("name");
-    var child2b = document.getElementById("gender");
-    var child2c = document.getElementById("difficulty");
-    var parent3 = document.getElementById("button");
-    var child3 = document.getElementById("start");
-    name = child2a.value;
-    gender = child2b.value;
-    difficulty = child2c.value;
-
-    if (name == '') {
-        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender == "Man") {
-            name = nameList[0][Math.floor((Math.random() * nameList.length))];
-        } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
-            name = nameList[1][Math.floor((Math.random() * nameList.length))];
-        } else {
-            name = nameList[(Math.floor((Math.random() * 2)+1)-1)][Math.floor((Math.random() * nameList[0].length))];
-        }
-        //console.log("Name chosen is " + name);
-    }
-    
-    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
-        pronouns = ["boy", "he"];
-    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl" || gender == "woman" || gender == "Woman" || gender == "gurl" || gender == "Gurl") {
-        pronouns = ["girl", "she"];
-    } else {
-        pronouns = ["kid", "they"];
-    }
-    
-    parent1.removeChild(child1);    
-    parent2.removeChild(child2a);
-    parent2.removeChild(child2b);
-    parent2.removeChild(child2c);
-    parent3.removeChild(child3);
-}
 
 function printText(text, addToPara) {
     typing = 1;
