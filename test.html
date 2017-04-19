@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodeChangers 2017 Text RPG</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body id="bg" style="background-color:#0040ff;">
+      <div id="box" style="width:400px; height:450px; background-color:white;">
+          <div id="storyBox">
+              <p id="story"></p>
+          </div>
+          <div id="text" style="width:200px; height:225px; text-align:center;">
+              <h1 id="title">New Game</h1>
+          </div>
+          <div style="width:370px; height:25px; position:fixed; top;50%; left:50%; margin-top:420px; margin-left:-188px; text-align:center;" id="inpBox"></div>
+          <div id="setup" style="width:200px; height:225px; text-align:center;">
+            <input id="name" type="text" placeholder="Name"><br>
+            <input id="gender" type="text" placeholder="Gender"><br>
+            <select id="difficulty" name="difficulty" id="difficulty"><br>
+                <option value="1">Easy</option>
+                <option value="2">Normal</option>
+                <option value="3">Challenging</option>
+                <option value="4">Hard</option>
+            </select>
+          </div>
+          <div id="button" style="width:200px; height:225px; text-align:center;">
+              <button id="start" onclick="startGame()">Start</button>
+          </div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
