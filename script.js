@@ -44,6 +44,24 @@ function setup() {
     name = child2a.value;
     gender = child2b.value;
     difficulty = child2c.value;
+    if (name == '') {
+        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender == "Man") {
+            name = nameList[0][Math.floor((Math.random() * nameList.length))];
+        } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
+            name = nameList[1][Math.floor((Math.random() * nameList.length))];
+        } else {
+            name = nameList[(Math.floor((Math.random() * 2)+1)-1)][Math.floor((Math.random() * nameList[0].length))];
+        }
+        //console.log("Name chosen is " + name);
+    }
+
+    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
+        pronouns = ["boy", "he"];
+    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl" || gender == "woman" || gender == "Woman" || gender == "gurl" || gender == "Gurl") {
+        pronouns = ["girl", "she"];
+    } else {
+        pronouns = ["kid", "they"];
+    }
     storyList = [
         [["There was once a time, long, long ago... Before Humans had taken the planet. The world had, rather, two dominating species, working, in turn, to keep everything in balance.", 'desc'], 1, '', 1, 0, false, 1, 0],
         [["As things had been long before, the Humans and Mimiga worked together in a constant struggle for the upper hand, in a strange but stable relationship.", 'desc'], 1, '', 2, 0, false, 1, 0],
@@ -74,25 +92,7 @@ function setup() {
         [["On the way to school, you pass by a food mill. There seems to be a ruckus inside, and a few Mimiga Managers are going inside.", 'desc'], 5, ["GO INSIDE", "CONTINUE"], [27, 30], 0, true, 4, 0],
         [["You head inside and see that it’s a Mimiga riot, as the Mimiga workers started fighting the Managers. The Managers appear to be slowing the riot, and a small Mimiga about your size/age wearing pink work overalls falls in front of you.", 'desc'], 3, '', 28, 1, true, 4, 0]
     ];
-    if (name == '') {
-        if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender == "Man") {
-            name = nameList[0][Math.floor((Math.random() * nameList.length))];
-        } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl") {
-            name = nameList[1][Math.floor((Math.random() * nameList.length))];
-        } else {
-            name = nameList[(Math.floor((Math.random() * 2)+1)-1)][Math.floor((Math.random() * nameList[0].length))];
-        }
-        //console.log("Name chosen is " + name);
-    }
-
-    if (gender == "male" || gender == "boy" || gender == "Male" || gender == "Boy" || gender == "guy" || gender == "Guy" || gender == "dude" || gender == "Dude" || gender == "man" || gender =="Man") {
-        pronouns = ["boy", "he"];
-    } else if (gender == "female" || gender == "girl" || gender == "Female" || gender == "Girl" || gender == "woman" || gender == "Woman" || gender == "gurl" || gender == "Gurl") {
-        pronouns = ["girl", "she"];
-    } else {
-        pronouns = ["kid", "they"];
-    }
-    console.log(pronouns);
+    
     parent1.removeChild(child1);
     parent2.removeChild(child2a);
     parent2.removeChild(child2b);
