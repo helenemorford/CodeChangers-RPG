@@ -92,6 +92,7 @@ function setup() {
     } else {
         pronouns = ["kid", "they"];
     }
+    console.log(pronouns);
     parent1.removeChild(child1);
     parent2.removeChild(child2a);
     parent2.removeChild(child2b);
